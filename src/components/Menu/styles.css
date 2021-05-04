@@ -1,0 +1,10 @@
+.button-container {
+  width: 20em;
+  text-align: center;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.concealed-width {
+  width: 50%;
+}

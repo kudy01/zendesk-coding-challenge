@@ -1,0 +1,39 @@
+.logo {
+  color: white;
+}
+
+.buttonFont {
+  color: white;
+}
+.bg-menu {
+  background-color: #ffc400;
+}
+
+.bg-quit {
+  background-color: #ff6b6b;
+}
+
+.bg-ticket {
+  background-color: #1bf0bb;
+}
+.bg-tickets {
+  background-color: #f173eb;
+}
+
+#logo {
+  width: 8em;
+}
+
+#main {
+  text-align: center;
+}
+
+#button-container {
+  width: 15em;
+  text-align: center;
+  margin: auto;
+}
+
+.maxwidth {
+  width: 100%;
+}
