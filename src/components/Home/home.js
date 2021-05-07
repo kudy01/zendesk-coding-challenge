@@ -2,12 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./styles.css";
-import { Quit, Menu } from "..";
+import { Menu, Quit, TicketsIndex } from "..";
 
 const Home = () => {
   return (
     <Router>
       <Switch>
+        <Route path="/tickets">
+          <TicketsIndex />
+        </Route>
         <Route path="/menu">
           <Menu />
         </Route>

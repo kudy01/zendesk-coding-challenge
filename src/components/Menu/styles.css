@@ -8,3 +8,8 @@
 .concealed-width {
   width: 50%;
 }
+.input-error {
+  color: #d41a1a;
+  font-size: 12px;
+  margin: 4px 0 8px 0;
+}
