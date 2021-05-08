@@ -7,6 +7,6 @@ router.get("/auth", userValidity);
 
 router.get("/tickets", getTickets);
 
-router.get("/tickets:id", getTicket);
+router.get("/ticket/:id", getTicket);
 
 module.exports = router;

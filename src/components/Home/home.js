@@ -2,22 +2,25 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./styles.css";
-import { Menu, Quit, TicketsIndex } from "..";
+import { Menu, Quit, SingleTicket, TicketsIndex } from "..";
 
 const Home = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/tickets">
+        <Route exact path="/tickets">
           <TicketsIndex />
         </Route>
-        <Route path="/menu">
+        <Route exact path="/ticket/:id">
+          <SingleTicket />
+        </Route>
+        <Route exact path="/menu">
           <Menu />
         </Route>
-        <Route path="/quit">
+        <Route exact path="/quit">
           <Quit />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <div id="main">
             <div>
               <h1 className="f1 tc logo"> Zendesk </h1>

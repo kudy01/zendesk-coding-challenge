@@ -49,23 +49,21 @@ const TicketsIndex = () => {
   ];
 
   return (
-    <div>
-      <div>
-        <h1 className="white pa4">Zendesk Ticket Viewer</h1>
-        {error ? (
-          <h3 className="white pa4">Something went wrong: {errorMessage}</h3>
-        ) : (
-          <ReactTable
-            data={data}
-            columns={columns}
-            defaultPageSize={25}
-            pageSizeOptions={[25]}
-            style={{ background: "white" }}
-            className="-striped -highlight"
-          />
-        )}
-      </div>
-    </div>
+    <>
+      <h1 className="white pa4">Zendesk Ticket Viewer</h1>
+      {error ? (
+        <h3 className="white pa4">Something went wrong: {errorMessage}</h3>
+      ) : (
+        <ReactTable
+          data={data}
+          columns={columns}
+          defaultPageSize={25}
+          pageSizeOptions={[25]}
+          style={{ background: "white" }}
+          className="-striped -highlight"
+        />
+      )}
+    </>
   );
 };
 
