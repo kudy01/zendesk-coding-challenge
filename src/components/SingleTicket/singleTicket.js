@@ -9,7 +9,7 @@ const SingleTicket = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const id = location.state.id; // can change to session storage to prevent undefined errors
+  const id = location.state.id;
 
   const getTicket = async (id) => {
     try {

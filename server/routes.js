@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { userValidity, getTickets, getTicket } = require("./controller");
-
-router.get("/auth", userValidity);
+const { getTickets, getTicket } = require("./controller");
 
 router.get("/tickets", getTickets);
 

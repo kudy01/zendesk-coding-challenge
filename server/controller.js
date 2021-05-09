@@ -1,20 +1,7 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const userValidity = (req, res) => {
-  try {
-    const url = "https://orca1122.zendesk.com/api/v2/users.json";
-    axios
-      .get(url, {
-        auth: {
-          username: "kushalstar01@gmail.com",
-          password: "12345678",
-        },
-      })
-      .then((response) => res.send(response.data));
-  } catch (e) {
-    console.log(e);
-  }
-};
+const { REACT_APP_MY_EMAIL, REACT_APP_MY_PASSWORD } = process.env;
 
 const getTickets = (req, res) => {
   try {
@@ -22,8 +9,8 @@ const getTickets = (req, res) => {
     axios
       .get(url, {
         auth: {
-          username: "kushalstar01@gmail.com",
-          password: "12345678",
+          username: REACT_APP_MY_EMAIL,
+          password: REACT_APP_MY_PASSWORD,
         },
       })
       .then((response) => res.send(response.data));
@@ -53,7 +40,6 @@ const getTicket = (req, res) => {
 };
 
 module.exports = {
-  userValidity,
   getTickets,
   getTicket,
 };
