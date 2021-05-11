@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+## How to run (MacOS/Windows)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Download the repository to your local machine with the following code.
 
-## Available Scripts
+```
+$ git clone https://github.com/kudy01/zendesk-coding-challenge.git
+```
 
-In the project directory, you can run:
+2. Navigate to the server directory in MacOS terminal or equivalent command line application and install all the dependencies (for server side)
 
-### `yarn start`
+3. Navigate to the root of the project and install all the dependencies (for client side).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Install all node modules with the following code.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+$ yarn install
+```
 
-### `yarn test`
+or
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ npm install
+```
 
-### `yarn build`
+4. Run the server by going to the server directory and using
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ nodemon server.js
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Run the client by going to the root of the project and using
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ yarn start
+```
 
-### `yarn eject`
+Note: The client would start on a different port than server so make sure to allow the client to run in a separate port
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Run Tests
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Navigate to the repository directory in your MacOS Terminal or equivalent command line application.
+2. Run the tests with the following code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+$ yarn test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Design Overview
 
-## Learn More
+### Assumptions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Ticket requests to the Zendesk API will always return JSON with the same structure.
+- Error responses from the Zendesk API will always return JSON with the same structure.
+- The username and password and subdomain is used the same as used while creating the UI, the username and password have been set as enviornment variables which are passed in the backend to make requests to differnet endpoints to get data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Main Component Description
 
-### Code Splitting
+#### Client Side
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `ticketsIndex.js` : Displays all the tickets of the user.
+- `singleTicket.js` : Displays an individual ticket of the user based on the provided ticket number
+- `menu.js` : Displays the various options available to the user.
+- `home.js` : Contains the main page of the application which the user first sees while starting and also contains all the different routes which are provided using react-router-dom.
 
-### Analyzing the Bundle Size
+#### Server Side
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `server.js` : Contains the basic architecture of the backend server made using Express and using Cors as a middleware.
+- `routes.js` : Contains the different routes used by controllers to create endpoints from where the client can make requests to the server
+- `controller.js` : Contains the data after making request to the Zendesk API to the necessary routes to get the data which is the called and displayed in the client side.
+- `tickets.json` : Contains the different tickets which was added to a particular user using the cUrl command specified
 
-### Making a Progressive Web App
+### Reason for specified approach
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Routes were used after leveraging [react-router-dom](https://reactrouter.com/web/guides/quick-start) library to make sure for effiecient navigation on the user end and a smooth flow.
 
-### Advanced Configuration
+- The server was created to make requests to the Zendesk API as due to Zendesk's blocking of cross-origin fetching from the browser(client side). Learn more about [Cross Origin fetching](https://javascript.info/fetch-crossorigin#:~:text=If%20we%20send%20a%20fetch,site%2C%20it%20will%20probably%20fail.&text=Cross%2Dorigin%20requests%20%E2%80%93%20those%20sent,%3A%20Cross%2DOrigin%20Resource%20Sharing.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- As a result the server was used to fetch the data and the client then communicated with the server with the help of cors middleware enabled in the server, to fetch the data which was then displayed in the client side and made visible to the user. Learn more about [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
-### Deployment
+- The returned data was displayed in a tabular form using [ReactTable](https://www.npmjs.com/package/react-table) which enabled a streamlined UI along with pagination and customisations of choice.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Formik](https://formik.org/docs/overview) and [Yup](https://github.com/jquense/yup) was used to do basic validation to make sure the user enters a tciket while viewing one ticket and does not keep it as an empty field.
 
-### `yarn build` fails to minify
+- [Tachyons](https://tachyons.io/) was used to design the UI as it offers a quick and effective design.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Axios](https://axios-http.com/docs/intro) was used to make [HTTP](http://nodejs.org/api/http.html) requests from nodejs and [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser.
+
+## Resources
+
+The following resources helped me know more about how the Zendesk API works and further assited me to create this application.
+
+- Zendesk docs quick links
+
+  - [Tickets](https://developer.zendesk.com/rest_api/docs/support/tickets)
+
+  - [Basic Authentication](https://developer.zendesk.com/rest_api/docs/support/introduction#using-basic-authentication)
+
+  - [Pagination](https://develop.zendesk.com/hc/en-us/articles/360001068607-Paginating-through-lists#cursor)
