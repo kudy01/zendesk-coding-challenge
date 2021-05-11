@@ -59,7 +59,10 @@ const Menu = () => {
               {formik.errors.ticketNumber && formik.touched.ticketNumber && (
                 <p className="input-error">{formik.errors.ticketNumber}</p>
               )}
-              <button className="b concealed-width no-underline mb2 mt2 pv2 input-reset ba b--white-025 white grow pointer f3 dib bg-yellow br-pill buttonFont">
+              <button
+                type="submit"
+                className="b concealed-width no-underline mb2 mt2 pv2 input-reset ba b--white-025 white grow pointer f3 dib bg-yellow br-pill buttonFont"
+              >
                 Next
               </button>
             </div>

@@ -66,6 +66,7 @@ $ yarn test
 
 - `server.js` : Contains the basic architecture of the backend server made using Express and using Cors as a middleware.
 - `routes.js` : Contains the different routes used by controllers to create endpoints from where the client can make requests to the server
+- `authentication.js` : Contains the username and password converted into a base64 encoded string and returned as headers to fulfil [basic authentication](https://developer.zendesk.com/rest_api/docs/support/introduction#using-basic-authentication)
 - `controller.js` : Contains the data after making request to the Zendesk API to the necessary routes to get the data which is the called and displayed in the client side.
 - `tickets.json` : Contains the different tickets which was added to a particular user using the cUrl command specified
 
@@ -96,3 +97,5 @@ The following resources helped me know more about how the Zendesk API works and 
   - [Basic Authentication](https://developer.zendesk.com/rest_api/docs/support/introduction#using-basic-authentication)
 
   - [Pagination](https://develop.zendesk.com/hc/en-us/articles/360001068607-Paginating-through-lists#cursor)
+
+- [Base64 encoding](https://stackoverflow.com/questions/6182315/how-to-do-base64-encoding-in-node-js)

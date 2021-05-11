@@ -40,6 +40,10 @@ const TicketsIndex = () => {
       accessor: "status",
     },
     {
+      Header: "Organisation Id",
+      accessor: "organization_id",
+    },
+    {
       id: "created_at",
       Header: "Created At",
       accessor: (d) => {

@@ -19,6 +19,7 @@ const SingleTicket = () => {
         setError(true);
       } else {
         setData(response.data.ticket);
+        console.log("hech", response.data);
       }
     } catch (e) {
       setErrorMessage(e.message);
@@ -52,6 +53,10 @@ const SingleTicket = () => {
           <div className="tl pb1">
             <h1 className="f4 yellow-view">Status</h1>
             <h1 className="f4 white">{data.status}</h1>
+          </div>
+          <div className="tl pb1">
+            <h1 className="f4 yellow-view">Organisation Id</h1>
+            <h1 className="f4 white">{data.organization_id}</h1>
           </div>
           <div className="tl pb1">
             <h1 className="f4 yellow-view">Created At</h1>
