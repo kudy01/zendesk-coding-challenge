@@ -97,3 +97,5 @@ The following resources helped me know more about how the Zendesk API works and 
   - [Basic Authentication](https://developer.zendesk.com/rest_api/docs/support/introduction#using-basic-authentication)
 
   - [Pagination](https://develop.zendesk.com/hc/en-us/articles/360001068607-Paginating-through-lists#cursor)
+
+- [Base64 encoding](https://stackoverflow.com/questions/6182315/how-to-do-base64-encoding-in-node-js)
