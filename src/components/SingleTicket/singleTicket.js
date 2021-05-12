@@ -19,7 +19,6 @@ const SingleTicket = () => {
         setError(true);
       } else {
         setData(response.data.ticket);
-        console.log("hech", response.data);
       }
     } catch (e) {
       setErrorMessage(e.message);

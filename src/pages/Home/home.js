@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./styles.css";
-import { Menu, Quit, SingleTicket, TicketsIndex } from "..";
+import { Menu, Quit } from "..";
+import { SingleTicket, TicketsIndex } from "../../components";
 
 const Home = () => {
   return (
