@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { REACT_APP_MY_USERNAME, REACT_APP_MY_PASSWORD } = process.env;
 
 const credentials = {

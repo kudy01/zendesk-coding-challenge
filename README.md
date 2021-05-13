@@ -39,10 +39,16 @@ Note: The client would start on a different port than server so make sure to all
 #### Run Tests
 
 1. Navigate to the repository directory in your MacOS Terminal or equivalent command line application.
-2. Run the tests with the following code
+2. Run the tests with the following command to run the tests in frontend
 
 ```
 $ yarn test
+```
+
+3. Navigate to the server folder and run tests with the following command to run the tests in the backend
+
+```
+$ npm test
 ```
 
 ## Design Overview
@@ -99,3 +105,7 @@ The following resources helped me know more about how the Zendesk API works and 
   - [Pagination](https://develop.zendesk.com/hc/en-us/articles/360001068607-Paginating-through-lists#cursor)
 
 - [Base64 encoding](https://stackoverflow.com/questions/6182315/how-to-do-base64-encoding-in-node-js)
+
+- Jest
+  - [Router Testing](https://javascript.plainenglish.io/testing-react-router-with-jest-bc13d367bad)
+  - [API Testing](https://github.com/axios/axios/issues/1754)
