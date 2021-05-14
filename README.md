@@ -6,13 +6,13 @@
 $ git clone https://github.com/kudy01/zendesk-coding-challenge.git
 ```
 
-2.
+2. Navigate into the server folder
 
 ```
    $ cd zendesk-coding-challenge/server
 ```
 
-3. Create a .env file at the root and paste the credentials which I have emailed to Sabrina, so that the application can read my credentials while running.
+3. Create a .env file at the root and paste the credentials which have been emailed to Sabrina, so that the application can read my credentials while running.
 
 4. Navigate to the server directory in MacOS terminal or equivalent command line application and install all the dependencies (for server side).
 
@@ -52,7 +52,7 @@ $ yarn start
 
 The browser should start the application in [http://localhost:3001](http://localhost:3001)
 
-Note: The client would start on a different port than server so make sure to allow the client to run in a separate port.
+Note: The client would start on a different port than the server so make sure to allow the client to run in a separate port.
 
 #### Run Tests
 
@@ -85,7 +85,7 @@ $ npm test
 
 #### Client Side
 
-- `ticketsIndex.js` : Displays all the tickets of the user. It takes some time to fetch as it has to perform pagination. (Did not add a loader as no extra features were asked)
+- `ticketsIndex.js` : Displays all the tickets of the user. It takes some time to fetch as it has to perform pagination. (No loader was added as no extra features were asked)
 - `singleTicket.js` : Displays an individual ticket of the user based on the provided ticket number
 - `menu.js` : Displays the various options available to the user.
 - `home.js` : Contains the main page of the application which the user first sees while starting and also contains all the different routes which are provided using react-router-dom.

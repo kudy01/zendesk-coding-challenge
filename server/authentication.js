@@ -3,7 +3,7 @@ require("dotenv").config();
 const { REACT_APP_MY_USERNAME, REACT_APP_MY_PASSWORD } = process.env;
 
 const credentials = {
-  baseUrl: "https://orca1122.zendesk.com/api/v2",
+  baseUrl: "https://doge.zendesk.com/api/v2",
   username: REACT_APP_MY_USERNAME,
   password: REACT_APP_MY_PASSWORD,
 };
