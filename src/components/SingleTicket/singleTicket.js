@@ -14,12 +14,7 @@ const SingleTicket = () => {
   const getTicket = async (id) => {
     try {
       const response = await axios.get(`http://localhost:3000/ticket/${id}`);
-      if (!response.data.ticket) {
-        setErrorMessage(response.data.error);
-        setError(true);
-      } else {
-        setData(response.data.ticket);
-      }
+      setData(response.data.ticket);
     } catch (e) {
       setErrorMessage(e.message);
       setError(true);

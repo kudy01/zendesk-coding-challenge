@@ -6,35 +6,53 @@
 $ git clone https://github.com/kudy01/zendesk-coding-challenge.git
 ```
 
-2. Navigate to the server directory in MacOS terminal or equivalent command line application and install all the dependencies (for server side)
-
-3. Navigate to the root of the project and install all the dependencies (for client side).
-
-4. Install all node modules with the following code.
+2.
 
 ```
+   $ cd zendesk-coding-challenge/server
+```
+
+3. Create a .env file at the root and paste the credentials which I have emailed to Sabrina, so that the application can read my credentials while running.
+
+4. Navigate to the server directory in MacOS terminal or equivalent command line application and install all the dependencies (for server side).
+
+5. Navigate to the root of the project and install all the dependencies (for client side).
+
+6. Install all node modules with the following code (in both client and server side).
+
+```
+
 $ yarn install
+
 ```
 
 or
 
 ```
+
 $ npm install
-```
-
-4. Run the server by going to the server directory and using
 
 ```
+
+7. Run the server by going to the server directory and using
+
+```
+
 $ nodemon server.js
-```
-
-5. Run the client by going to the root of the project and using
 
 ```
+
+8. Run the client by going to the root of the project and using
+
+```
+
 $ yarn start
+
 ```
 
-Note: The client would start on a different port than server so make sure to allow the client to run in a separate port
+The browser should start the application in [http://localhost:3001](http://localhost:3001)
+
+Note: The client would start on a different port than server so make sure to allow the client to run in a separate port.
 
 #### Run Tests
 
@@ -42,13 +60,17 @@ Note: The client would start on a different port than server so make sure to all
 2. Run the tests with the following command to run the tests in frontend
 
 ```
+
 $ yarn test
+
 ```
 
 3. Navigate to the server folder and run tests with the following command to run the tests in the backend
 
 ```
+
 $ npm test
+
 ```
 
 ## Design Overview
@@ -59,11 +81,11 @@ $ npm test
 - Error responses from the Zendesk API will always return JSON with the same structure.
 - The username and password and subdomain is used the same as used while creating the UI, the username and password have been set as enviornment variables which are passed in the backend to make requests to differnet endpoints to get data.
 
-### Main Component Description
+### Main component/pages description
 
 #### Client Side
 
-- `ticketsIndex.js` : Displays all the tickets of the user.
+- `ticketsIndex.js` : Displays all the tickets of the user. It takes some time to fetch as it has to perform pagination. (Did not add a loader as no extra features were asked)
 - `singleTicket.js` : Displays an individual ticket of the user based on the provided ticket number
 - `menu.js` : Displays the various options available to the user.
 - `home.js` : Contains the main page of the application which the user first sees while starting and also contains all the different routes which are provided using react-router-dom.
@@ -76,7 +98,7 @@ $ npm test
 - `controller.js` : Contains the data after making request to the Zendesk API to the necessary routes to get the data which is the called and displayed in the client side.
 - `tickets.json` : Contains the different tickets which was added to a particular user using the cUrl command specified
 
-### Reason for specified approach
+### Reason for specified approach and different libraries used
 
 - Routes were used after leveraging [react-router-dom](https://reactrouter.com/web/guides/quick-start) library to make sure for effiecient navigation on the user end and a smooth flow.
 
@@ -86,11 +108,13 @@ $ npm test
 
 - The returned data was displayed in a tabular form using [ReactTable](https://www.npmjs.com/package/react-table) which enabled a streamlined UI along with pagination and customisations of choice.
 
-- [Formik](https://formik.org/docs/overview) and [Yup](https://github.com/jquense/yup) was used to do basic validation to make sure the user enters a tciket while viewing one ticket and does not keep it as an empty field.
+- [Formik](https://formik.org/docs/overview) and [Yup](https://github.com/jquense/yup) was used to do basic validation to make sure the user enters a ticket while viewing one ticket and does not keep it as an empty field.
 
 - [Tachyons](https://tachyons.io/) was used to design the UI as it offers a quick and effective design.
 
 - [Axios](https://axios-http.com/docs/intro) was used to make [HTTP](http://nodejs.org/api/http.html) requests from nodejs and [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser.
+
+- [dotenv](https://www.npmjs.com/package/dotenv) was used in the backend, to get access to enviornmental variables which was used to store credentials.
 
 ## Resources
 
@@ -109,3 +133,7 @@ The following resources helped me know more about how the Zendesk API works and 
 - Jest
   - [Router Testing](https://javascript.plainenglish.io/testing-react-router-with-jest-bc13d367bad)
   - [API Testing](https://github.com/axios/axios/issues/1754)
+
+```
+
+```
