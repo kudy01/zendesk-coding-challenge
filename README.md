@@ -49,6 +49,7 @@ $ nodemon server.js
 $ yarn start
 
 ```
+Note: If the terminal gives an error with yarn start, delete the `yarn.lock` file and run ```$ yarn``` or ```$ yarn install```.
 
 The browser should start the application in [http://localhost:3001](http://localhost:3001)
 
